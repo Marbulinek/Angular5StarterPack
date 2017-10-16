@@ -5,6 +5,7 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let pathsToClean = ['dist'];
 let cleanOptions = 
@@ -63,6 +64,11 @@ module.exports = function(env) {
                 filename: 'styles.bundle.css',
                 allChunks: true
             }),
+            new CopyWebpackPlugin([
+                { from: './configs/application-environment.json', to: './angular_conf' },
+                { from: './configs/config.development.json', to: './angular_conf' },
+                { from: './configs/config.production.json', to: './angular_conf' }
+            ]),
             new HtmlWebpackPlugin({
                 files: {
                     "css" : ["styles.bundle.css"]
