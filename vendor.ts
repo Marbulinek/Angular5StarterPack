@@ -13,5 +13,4 @@ import '@angular/animations';
 import 'rxjs';
 
 //import other js/css libraries
-
 require ('./styles/styles.css');

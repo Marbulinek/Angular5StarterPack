@@ -2,16 +2,22 @@
 var path = require('path');
 
 var webpackMerge = require('webpack-merge');
-const commonWebpackConfig = require('./webpack_common_config.js');
+var commonWebpackConfig = require('./webpack_common_config.js');
+var CircularDependencyPlugin = require('circular-dependency-plugin')
 
 
-module.exports = function(env) {
-    return webpackMerge(commonWebpackConfig(), {
-        watch: true,
-        devtool: 'inline-source-map'
-        // output: {
-        //     filename: '[name].js',
-        //     path: path.resolve(__dirname, '../../dist')
-        // }
-    })
+module.exports = function (env) {
+    return webpackMerge(commonWebpackConfig(),
+        {
+            devtool: 'inline-source-map',
+            plugins: [
+                new CircularDependencyPlugin({
+                    // exclude detection of files based on a RegExp 
+                   exclude: /a\.js|node_modules/,
+                   // add errors to webpack instead of warnings 
+                   failOnError: true
+                })
+            ]
+        }
+   )
 }

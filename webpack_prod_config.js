@@ -10,13 +10,9 @@ var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = function(env) {
     return webpackMerge(commonWebpackConfig(), {
-        output: {
-            filename: '[name].js',
-            path: path.resolve(__dirname, 'dist')
-        },
         plugins: [
             new webpack.LoaderOptionsPlugin({
-                minimize: true,
+                minimize: false,
                 debug: false
             }),
             new webpack.DefinePlugin({
@@ -25,18 +21,9 @@ module.exports = function(env) {
                 }
             }),
             new webpack.optimize.UglifyJsPlugin({
-                mangle: false,
-                compress: {
-                    warnings: false, // Suppress uglification warnings
-                    pure_getters: true,
-                    unsafe: true,
-                    unsafe_comps: true,
-                    screw_ie8: true
+                mangle: {
+                    keep_fnames: true
                 },
-                output: {
-                    comments: false,
-                },
-                exclude: [/\.min\.js$/gi], // skip pre-minified libs,
                 sourceMap: false
             }),
             new webpack.optimize.AggressiveMergingPlugin(),
