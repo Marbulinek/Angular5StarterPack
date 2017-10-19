@@ -2,6 +2,7 @@
 version: 1.1.1
 
 [![Build Status](https://travis-ci.org/Marbulinek/Angular4StarterPack.svg?branch=master)](https://travis-ci.org/Marbulinek/Angular4StarterPack)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Angular
 version 4.4.2
