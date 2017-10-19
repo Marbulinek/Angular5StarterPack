@@ -11,7 +11,7 @@
     "build:prod": "webpack --optimize-minimize --env=prod --progress --profile --colors",
     "tsc": "tsc"
   },
-  "license": "GNU",
+  "license": "MIT",
   "dependencies": {
     "@angular/animations": "^4.4.5",
     "@angular/common": "^4.4.5",
