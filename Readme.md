@@ -1,5 +1,5 @@
 # Angular4 Starter pack
-version: 1.1.0
+version: 1.1.1
 
 [![Build Status](https://travis-ci.org/Marbulinek/Angular4StarterPack.svg?branch=master)](https://travis-ci.org/Marbulinek/Angular4StarterPack)
 
