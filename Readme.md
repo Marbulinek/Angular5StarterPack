@@ -1,6 +1,8 @@
 # OneFace Angular4 Starter pack
 version: 1.1.0
 
+[![Build Status](https://travis-ci.org/Marbulinek/Angular4StarterPack.svg?branch=master)](https://travis-ci.org/Marbulinek/Angular4StarterPack)
+
 ## Angular
 version 4.4.2
 
