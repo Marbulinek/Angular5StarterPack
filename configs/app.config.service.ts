@@ -1,4 +1,4 @@
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /**
@@ -13,7 +13,7 @@ export class AppConfigService {
     private environment: string;
     public static ANGULAR_CONF_DEF_PATH: string = "./angular_conf/";
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
     }
 
     /**
@@ -35,7 +35,7 @@ export class AppConfigService {
      * Returning actual environment
      */
     public isProd(): boolean{
-        return (this.environment=='production')?true:false;
+        return (this.environment == 'production') ? true : false;
     }
 
     /**
@@ -47,13 +47,11 @@ export class AppConfigService {
         try{
             return new Promise((resolve) => {
                 this.http.get(AppConfigService.ANGULAR_CONF_DEF_PATH + 'application-environment.json')
-                .map(res => res.json())
                 .subscribe( 
-                    (data) => {
+                    (data:any) => {
                         this.environment = data.env;
     
                         this.http.get(AppConfigService.ANGULAR_CONF_DEF_PATH + 'config.' + this.environment + '.json')
-                        .map(res => res.json())
                         .subscribe( 
                             (data) => {
                                 this.config = data;

@@ -55,8 +55,8 @@ module.exports = function(env) {
         plugins: [
             new CleanWebpackPlugin(pathsToClean, cleanOptions),
             new webpack.ContextReplacementPlugin(
-                // Angular4 workaround
-                /angular(\\|\/)core(\\|\/)@angular/,
+                // Angular5 - Webpack build workaround
+                /angular(\\|\/)core(\\|\/)/,
                 root('./application'),
                 {}
             ),
