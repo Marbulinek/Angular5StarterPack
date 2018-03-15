@@ -5,7 +5,7 @@ version: 1.3.0
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Angular
-version 4.4.2
+version 5.2.9
 
 ## Config
 This project contains customizable angular config. Json config file should be copied into dist folder.
@@ -15,10 +15,10 @@ You can copy it in some build step or in webpack configuration
 ## Webpack
 
 ```npm
-npm install -g webpack@latest
+npm install -g webpack@3.8.1
 ```
 Webpack must be installed globally.
-version 3.7.1
+version 3.8.1
 
 ## Author
 
