@@ -1,5 +1,5 @@
 # Angular5 Starter pack
-version: 1.2.0
+version: 1.3.0
 
 [![Build Status](https://travis-ci.org/Marbulinek/Angular5StarterPack.svg?branch=master)](https://travis-ci.org/Marbulinek/Angular4StarterPack)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
