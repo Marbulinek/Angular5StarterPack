@@ -7,10 +7,10 @@
     "emitDecoratorMetadata": true,
     "module": "commonjs",
     "noImplicitAny": false,
-    "compileOnSave": false,
     "moduleResolution": "node",
     "suppressImplicitAnyIndexErrors": true
   },
+  "compileOnSave": true,
   "exclude": [
     "node_modules",
     "dist"

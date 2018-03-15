@@ -6,6 +6,7 @@ var webpackMerge = require('webpack-merge');
 const commonWebpackConfig = require('./webpack_common_config.js');
 
 var CompressionPlugin = require("compression-webpack-plugin");
+const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
 
 module.exports = function(env) {
@@ -17,12 +18,14 @@ module.exports = function(env) {
             }),
             new webpack.DefinePlugin({
                 'process.env': {
-                    'NODE_ENV': JSON.stringify('production')
+                    'ENV': JSON.stringify(ENV)
                 }
             }),
             new webpack.optimize.UglifyJsPlugin({
-                mangle: {
-                    keep_fnames: true
+                include: /\.min\.js$/,
+                minimize: true,
+                compress: {
+                    warnings: false
                 },
                 sourceMap: false
             }),
