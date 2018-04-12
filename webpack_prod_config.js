@@ -11,6 +11,7 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
 module.exports = function(env) {
     return webpackMerge(commonWebpackConfig(), {
+        mode: 'production',
         plugins: [
             new webpack.LoaderOptionsPlugin({
                 minimize: false,

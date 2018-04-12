@@ -9,6 +9,7 @@ var CircularDependencyPlugin = require('circular-dependency-plugin')
 module.exports = function (env) {
     return webpackMerge(commonWebpackConfig(),
         {
+            mode: 'development',
             devtool: 'inline-source-map',
             plugins: [
                 new CircularDependencyPlugin({

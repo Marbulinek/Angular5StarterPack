@@ -5,7 +5,6 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let pathsToClean = ['dist'];
 let cleanOptions = 
@@ -17,9 +16,9 @@ let cleanOptions =
 module.exports = function(env) {
     return {
         entry: {
-            app: './main.ts',
             vendor: './vendor.ts',
-            polyfills: './polyfills.ts'
+            polyfills: './polyfills.ts',
+            app: './main.ts'
         },
         output: {
             filename: '[name].js',
@@ -29,7 +28,7 @@ module.exports = function(env) {
             extensions: ['.ts', '.tsx', '.js', '.jsx', '.css']
         },
         module: {
-            loaders: [
+            rules: [
                 {
                     test: /\.tsx?$/,
                     loader: 'awesome-typescript-loader'
@@ -64,11 +63,6 @@ module.exports = function(env) {
                 filename: 'styles.bundle.css',
                 allChunks: true
             }),
-            new CopyWebpackPlugin([
-                { from: './configs/application-environment.json', to: './angular_conf' },
-                { from: './configs/config.development.json', to: './angular_conf' },
-                { from: './configs/config.production.json', to: './angular_conf' }
-            ]),
             new HtmlWebpackPlugin({
                 files: {
                     "css" : ["styles.bundle.css"]

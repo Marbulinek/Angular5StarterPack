@@ -1,5 +1,4 @@
 ﻿import { Component } from '@angular/core';
-import { AppConfigService } from '../configs/app.config.service';
 
 export class Hero {
   id: number;
@@ -24,10 +23,5 @@ export class AppComponent {
     id: 1,
     name: 'Windstorm'
   };
-
-  constructor(private appConfigService: AppConfigService) {
-    //e.g.: here can be your web api settings | from configs json files
-    let configVariable = this.appConfigService.getSpecificConfig('webapi-url');
-  }
 
 }

@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import { AppConfigService } from '../configs/app.config.service';
 
 @NgModule({
   imports: [
@@ -15,9 +14,8 @@ import { AppConfigService } from '../configs/app.config.service';
   declarations: [
     AppComponent
   ],
-  providers:[
-    AppConfigService,
-    { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.loadConfigurationFile(), deps: [AppConfigService], multi: true }
+  providers:[ 
+    // providers will be here
   ],
   bootstrap: [ AppComponent ]
 })

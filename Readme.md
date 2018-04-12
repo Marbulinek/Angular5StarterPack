@@ -1,5 +1,5 @@
 # Angular5 Starter pack
-version: 1.3.0
+version: 1.4.0
 
 [![Build Status](https://travis-ci.org/Marbulinek/Angular5StarterPack.svg?branch=master)](https://travis-ci.org/Marbulinek/Angular5StarterPack)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,18 +7,14 @@ version: 1.3.0
 ## Angular
 version 5.2.9
 
-## Config
-This project contains customizable angular config. Json config file should be copied into dist folder.
-You can copy it in some build step or in webpack configuration
-> Config needs to be run as website in IIS or Apache. Needs to be localhost in URL. In other case you will see error in the console log (CORS error).
-
 ## Webpack
 
 ```npm
-npm install -g webpack@3.8.1
+npm install -g webpack@latest
+npm install -g webpack-cli@latest
 ```
-Webpack must be installed globally.
-version 3.8.1
+Webpack must be installed globally together with webpack-cli
+version 4.5.0
 
 ## Author
 

@@ -1,6 +1,6 @@
 {
   "name": "angular5-starter-pack",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": "Lukas Caniga <lukas.caniga@gmail.com>",
   "description": "angular5 lightweight starter pack",
   "scripts": {
@@ -24,29 +24,30 @@
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/platform-server": "^5.2.9",
     "@angular/router": "^5.2.9",
-    "core-js": "2.5.3",
-    "rxjs": "5.5.7",
-    "systemjs": "0.21.0",
-    "zone.js": "^0.8.20"
+    "core-js": "2.5.5",
+    "rxjs": "5.5.9",
+    "systemjs": "0.21.2",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@types/core-js": "0.9.46",
-    "@types/node": "^9.4.7",
-    "awesome-typescript-loader": "^4.0.1",
-    "circular-dependency-plugin": "^4.4.0",
+    "@types/node": "^9.6.4",
+    "awesome-typescript-loader": "^5.0.0-1",
+    "circular-dependency-plugin": "5.0.1",
     "copy-webpack-plugin": "4.5.1",
-    "clean-webpack-plugin": "^0.1.19",
-    "compression-webpack-plugin": "^1.1.11",
-    "css-loader": "^0.28.10",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "clean-webpack-plugin": "0.1.19",
+    "compression-webpack-plugin": "1.1.11",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "1.1.11",
-    "html-webpack-plugin": "3.0.6",
+    "html-webpack-plugin": "3.2.0",
     "less": "3.0.1",
     "less-loader": "4.1.0",
     "style-loader": "0.20.3",
-    "typescript": "2.7.2",
+    "typescript": "2.8.1",
     "url-loader": "^1.0.1",
-    "webpack": "3.8.1",
-    "webpack-merge": "^4.1.1"
+    "webpack": "4.5.0",
+    "webpack-cli": "2.0.14",
+    "webpack-merge": "^4.1.2"
   }
 }

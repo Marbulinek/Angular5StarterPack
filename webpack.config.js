@@ -1,7 +1,7 @@
 ﻿/*
   WEBPACK INIT
   - environments: dev, prod
-  - default run command: webpack --env=dev
+  - default run command: webpack --env=dev or webpack --env=prod
  */
 
 function buildConfig(env) {
