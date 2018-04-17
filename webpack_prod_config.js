@@ -22,14 +22,6 @@ module.exports = function(env) {
                     'ENV': JSON.stringify(ENV)
                 }
             }),
-            new webpack.optimize.UglifyJsPlugin({
-                include: /\.min\.js$/,
-                minimize: true,
-                compress: {
-                    warnings: false
-                },
-                sourceMap: false
-            }),
             new webpack.optimize.AggressiveMergingPlugin(),
             new CompressionPlugin({
                 asset: "[path].gz[query]",
