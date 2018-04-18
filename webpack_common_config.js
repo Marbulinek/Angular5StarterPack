@@ -16,7 +16,6 @@ let cleanOptions =
 module.exports = function(env) {
     return {
         entry: {
-            vendor: './vendor.ts',
             polyfills: './polyfills.ts',
             app: './main.ts'
         },
@@ -31,6 +30,7 @@ module.exports = function(env) {
             rules: [
                 {
                     test: /\.tsx?$/,
+                    exclude: __dirname + /node_modules/,
                     loader: 'awesome-typescript-loader'
                 },
                 {
@@ -50,6 +50,11 @@ module.exports = function(env) {
                     )
                 }
             ]
+        },
+        optimization: {
+            splitChunks: {
+                chunks: 'all',
+            }
         },
         plugins: [
             new CleanWebpackPlugin(pathsToClean, cleanOptions),
