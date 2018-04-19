@@ -7,4 +7,4 @@ before_install:
   - stty columns 120
 install:
   - npm install --ignore-scripts
-  - npm run build
+  - npm run build-prod
