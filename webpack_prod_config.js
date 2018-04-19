@@ -6,6 +6,7 @@ var webpackMerge = require('webpack-merge');
 const commonWebpackConfig = require('./webpack_common_config.js');
 
 var CompressionPlugin = require("compression-webpack-plugin");
+var OptimizeJsPlugin = require('optimize-js-plugin');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
@@ -14,18 +15,45 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 module.exports = function (env) {
     return webpackMerge(commonWebpackConfig(), {
         mode: 'production',
+
+        optimization: {
+            runtimeChunk: {
+                name: "manifest"
+            },
+            splitChunks: {
+                cacheGroups: {
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: "vendors",
+                        priority: -20,
+                        chunks: "all"
+                    }
+                }
+            }
+        },
+
         plugins: [
+            
             new webpack.DefinePlugin({
                 'process.env': {
                     'ENV': JSON.stringify(ENV)
                 }
             }),
+
             new webpack.LoaderOptionsPlugin({
                 minimize: true,
                 debug: false
             }),
-            new webpack.optimize.OccurrenceOrderPlugin(),
+
+            /** Webpack plugin to optimize javascript file for faster initial load
+             *  by wrapping eagerly-invoked functions
+            */
+            new OptimizeJsPlugin({
+                sourceMap: false
+            }),
+
             new webpack.optimize.AggressiveMergingPlugin(),
+
             new CompressionPlugin({
                 asset: "[path].gz[query]",
                 algorithm: "gzip",

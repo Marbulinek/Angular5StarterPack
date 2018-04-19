@@ -15,17 +15,21 @@ let cleanOptions =
 
 module.exports = function(env) {
     return {
+
         entry: {
             polyfills: './polyfills.ts',
             app: './main.ts'
         },
+
         output: {
             filename: '[name].js',
             path: root('./dist'),
         },
+
         resolve: {
             extensions: ['.ts', '.tsx', '.js', '.jsx', '.css']
         },
+
         module: {
             rules: [
                 {
@@ -48,26 +52,37 @@ module.exports = function(env) {
                             use: 'css-loader',
                         }
                     )
+                },
+                {   
+                    test: /\.html$/,
+                    use: [{
+                        loader: 'html-loader'
+                    }]
+
                 }
             ]
         },
-        optimization: {
-            splitChunks: {
-                chunks: 'all',
-            }
-        },
+
         plugins: [
+
             new CleanWebpackPlugin(pathsToClean, cleanOptions),
+
             new webpack.ContextReplacementPlugin(
                 // Angular5 - Webpack build workaround
                 /angular(\\|\/)core(\\|\/)/,
                 root('./application'),
                 {}
             ),
+            
+            new webpack.optimize.ModuleConcatenationPlugin(),
+            
+            new webpack.optimize.OccurrenceOrderPlugin(),
+
             new ExtractTextPlugin({
                 filename: 'styles.bundle.css',
                 allChunks: true
             }),
+
             new HtmlWebpackPlugin({
                 files: {
                     "css" : ["styles.bundle.css"]
@@ -77,7 +92,9 @@ module.exports = function(env) {
                 cache: false,
                 template: './my-index.ejs'
             })
+
         ]
+
     }
 }
 function root(__path) {

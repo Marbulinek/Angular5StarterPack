@@ -10,6 +10,7 @@
     "moduleResolution": "node",
     "suppressImplicitAnyIndexErrors": true
   },
+  "compileOnSave": false,
   "exclude": [
     "node_modules",
     "dist"
