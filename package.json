@@ -1,13 +1,14 @@
 {
   "name": "angular5-starter-pack",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "author": "Lukas Caniga <lukas.caniga@gmail.com>",
   "description": "angular5 lightweight starter pack",
   "scripts": {
     "build": "npm run build:dev",
     "build-prod": "npm run build:prod",
     "build:dev": "webpack --env=dev --progress --profile --colors --watch",
-    "build:prod": "webpack --optimize-minimize --env=prod"
+    "build:prod": "webpack --optimize-minimize --env=prod",
+    "build-aot": "webpack --env=aot --progress --profile --colors"
   },
   "license": "MIT",
   "dependencies": {
@@ -47,6 +48,7 @@
     "url-loader": "^1.0.1",
     "webpack": "4.6.0",
     "webpack-cli": "2.0.14",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.2",
+    "@ngtools/webpack": "6.0.0-rc.6"
   }
 }
